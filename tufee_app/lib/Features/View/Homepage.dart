@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
+import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,7 +22,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+// class _HomePageState extends State<HomePage> {
+  class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   // Generate some dummy data for the cahrt
   // This will be used to draw the red line
   final List<FlSpot> dummyData1 = List.generate(8, (index) {
@@ -37,6 +39,25 @@ class _HomePageState extends State<HomePage> {
   final List<FlSpot> dummyData3 = List.generate(8, (index) {
     return FlSpot(index.toDouble(), index * Random().nextDouble());
   });
+
+
+  late Animation<double> _animation;
+  late AnimationController _animationController;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+    );
+    final curvedAnimation = CurvedAnimation(
+      curve: Curves.easeInOut,
+      parent: _animationController,
+    );
+    _animation = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
+  }
   @override
   Widget build(BuildContext context) {
     bool isMobile = MediaQuery.of(context).size.height < 600;
@@ -255,17 +276,78 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-         Positioned(
-            bottom: 16.0,
-            right: 16.0,
-            child: FloatingActionButton(
-              backgroundColor: Colors.blue.shade500,
-              onPressed: () {
-                // Handle the floating action button press
-              },
-              child: Icon(Icons.add ,),
+        //  Positioned(
+        //     bottom: 16.0,
+        //     right: 16.0,
+        //     child: FloatingActionButton(
+        //       backgroundColor: Colors.blue.shade500,
+        //       onPressed: () {
+        //         // Handle the floating action button press
+        //       },
+        //       child: Icon(Icons.add ,),
+        //     ),
+        //   ),
+
+        Positioned(
+          bottom: 16.0,
+          right: 16.0,
+          child: Container(
+             width: MediaQuery.of(context).size.width,
+            child: FloatingActionBubble(
+              // animation controller
+              animation: _animation,
+              // On pressed change animation state
+              onPress: () => _animationController.isCompleted
+                  ? _animationController.reverse()
+                  : _animationController.forward(),
+              // Floating Action button Icon color
+              iconColor: Colors.blue,
+              // Floating Action button Icon
+              iconData: Icons.add,
+              backGroundColor: Colors.white,
+              // Menu items
+              items: <Bubble>[
+                Bubble(
+                  icon: Icons.abc, 
+                  iconColor: Colors.brown, 
+                  title: "Person", 
+                  titleStyle:TextStyle(fontSize: 16, color: Colors.white) ,
+                  
+                   bubbleColor: Colors.red, 
+                  onPress: (){
+                    _animationController.reverse();
+                  }
+                  ),
+                   Bubble(
+                  icon: Icons.abc, 
+                  iconColor: Colors.brown, 
+                  title: "Person", 
+                  titleStyle:TextStyle(fontSize: 16, color: Colors.white) ,
+                  
+                   bubbleColor: Colors.red, 
+                  onPress: (){
+                    _animationController.reverse();
+                  }
+                  ),
+            
+                   Bubble(
+                  icon: Icons.abc, 
+                  iconColor: Colors.brown, 
+                  title: "Person", 
+                  titleStyle:TextStyle(fontSize: 16, color: Colors.white) ,
+                  
+                   bubbleColor: Colors.red, 
+                  onPress: (){
+                    _animationController.reverse();
+                  }
+                  ),
+                
+              ],
             ),
           ),
+        ),
+
+        
         ],
       
     
