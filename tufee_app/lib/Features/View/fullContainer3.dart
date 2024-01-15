@@ -43,7 +43,6 @@ class fullContainer3 extends StatelessWidget {
               ],
             ),
             SizedBox(height: 18.sp),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

@@ -162,7 +162,10 @@ class AdditionalInfo extends StatelessWidget {
               ),
               Text(
                 label,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: primarycolor),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: primarycolor),
               ),
             ]),
 
@@ -176,9 +179,16 @@ class AdditionalInfo extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Column(
-                    children: [Text('0', 
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: primarycolor), ), 
-                    Text('Active', style: TextStyle(color: primarycolor))],
+                    children: [
+                      Text(
+                        '0',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: primarycolor),
+                      ),
+                      Text('Active', style: TextStyle(color: primarycolor))
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -186,9 +196,16 @@ class AdditionalInfo extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Text('0', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: primarycolor)), 
-                    Text('Closed', style: TextStyle(color: primarycolor),)
-                    ],
+                    Text('0',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: primarycolor)),
+                    Text(
+                      'Closed',
+                      style: TextStyle(color: primarycolor),
+                    )
+                  ],
                 ),
               ],
             )

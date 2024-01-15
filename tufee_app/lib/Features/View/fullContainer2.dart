@@ -11,8 +11,7 @@ class FullContainer2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: primarycolor3,
-          borderRadius: BorderRadius.circular(10)),
+          color: primarycolor3, borderRadius: BorderRadius.circular(10)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -67,8 +66,7 @@ class FullContainer2 extends StatelessWidget {
                         ],
                       ),
                       Row(
-                        mainAxisAlignment:
-                            MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
                             children: [
@@ -81,8 +79,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'Today',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -97,8 +94,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'Jan-2024',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -113,8 +109,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'All Time',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -143,8 +138,7 @@ class FullContainer2 extends StatelessWidget {
                         ],
                       ),
                       Row(
-                        mainAxisAlignment:
-                            MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
                             children: [
@@ -157,8 +151,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'Today',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -173,8 +166,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'Jan-2024',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -189,8 +181,7 @@ class FullContainer2 extends StatelessWidget {
                               ),
                               Text(
                                 'All Time',
-                                style:
-                                    TextStyle(color: primarycolor),
+                                style: TextStyle(color: primarycolor),
                               ),
                             ],
                           ),
@@ -207,4 +198,3 @@ class FullContainer2 extends StatelessWidget {
     );
   }
 }
-
